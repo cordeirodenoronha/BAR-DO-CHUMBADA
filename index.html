@@ -612,8 +612,17 @@
         </a>
       </div>
       <!-- Mobile Menu Icon -->
-      <div class="md:hidden pointer-events-auto bg-white text-black p-2 border-2 border-black transform -rotate-3 absolute right-4">
+      <div id="mobile-menu-btn" class="md:hidden pointer-events-auto bg-white text-black p-2 border-2 border-black transform -rotate-3 absolute right-4 cursor-pointer">
         <iconify-icon icon="solar:hamburger-menu-linear" width="32"></iconify-icon>
+      </div>
+    </div>
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-nav" class="hidden md:hidden pointer-events-auto bg-black border-b-2 border-red-600">
+      <div class="flex flex-col items-center py-4 space-y-3">
+        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#">CACHAÇA</a>
+        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#">CERVEJA</a>
+        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#">SAL</a>
+        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#" onclick="event.preventDefault(); document.getElementById('contato-modal').classList.remove('hidden'); document.getElementById('mobile-nav').classList.add('hidden');">CONTATO</a>
       </div>
     </div>
   </nav>
@@ -648,15 +657,13 @@
         <!-- Main Headline -->
         <div class="relative">
           <h2
-            class="font-anton text-7xl md:text-9xl uppercase leading-[0.99] text-white text-shadow-hard transform -rotate-2">
+            class="font-anton text-5xl sm:text-7xl md:text-9xl uppercase leading-[0.99] text-white text-shadow-hard transform -rotate-2">
             BUTECO
             <span class="inline-flex flex-col align-middle ml-2" style="vertical-align: middle;">
               <img src="assets/BRASIL.jpg" alt="Brasil"
-                class="block object-cover border-2 border-black"
-                style="width: 64px; height: 64px;">
+                class="block object-cover border-2 border-black w-12 h-12 sm:w-16 sm:h-16">
               <img src="assets/GALO.jpg" alt="Galo"
-                class="block object-cover border-2 border-black"
-                style="width: 64px; height: 64px; margin-top: -4px;">
+                class="block object-cover border-2 border-black w-12 h-12 sm:w-16 sm:h-16" style="margin-top: -4px;">
             </span>
             <br />
             <span class="text-black bg-white px-2">DO</span><br />
@@ -677,8 +684,8 @@
             <div class="absolute inset-0 bg-black translate-x-2 translate-y-2 clip-slant-right"></div>
             <div
               class="relative bg-red-600 text-white px-10 py-5 clip-slant-right border-2 border-black group-hover:bg-white group-hover:text-black transition-colors">
-              <span class="font-anton text-2xl tracking-wide uppercase flex items-center gap-2">
-                VEM PRO BUTECO, ALERTA - AMBIENTE INSALUBRE
+              <span class="font-anton text-lg sm:text-2xl tracking-wide uppercase flex items-center gap-2">
+                VEM PRO BUTECO
                 <iconify-icon icon="solar:arrow-right-linear" width="24"></iconify-icon>
               </span>
             </div>
@@ -703,7 +710,7 @@
     <!-- Bottom message -->
     <div
       class="absolute bottom-0 right-0 bg-red-600 text-white px-8 py-4 transform -skew-x-12 border-2 border-black z-30">
-      <span class="font-anton text-5xl md:text-6xl tracking-wide uppercase transform skew-x-12 inline-block whitespace-nowrap">MUITO ROCK N ROLL E AMIZADE !</span>
+      <span class="font-anton text-2xl sm:text-4xl md:text-6xl tracking-wide uppercase transform skew-x-12 inline-block whitespace-nowrap">MUITO ROCK N ROLL E AMIZADE !</span>
     </div>
   </header>
   <!-- Features Strip -->
@@ -795,7 +802,7 @@
     <div class="container mx-auto px-4 relative z-10">
       <div class="flex flex-col items-center mb-16">
         <h2
-          class="bg-white text-black font-anton text-5xl md:text-6xl px-8 py-2 transform -skew-x-12 rotate-2 border-4 border-black box-shadow-hard mb-4">
+          class="bg-white text-black font-anton text-3xl sm:text-5xl md:text-6xl px-4 sm:px-8 py-2 transform -skew-x-12 rotate-2 border-4 border-black box-shadow-hard mb-4">
           VENHA SE DIVERTIR
         </h2>
         <p class="text-white font-marker text-xl transform -rotate-1">Cachaça, cerveja e churrasco (se trouxer a carne).
@@ -813,14 +820,14 @@
             </div>
           </div>
           <div
-            class="bg-white border-2 border-black p-4 transform skew-x-3 hover:translate-x-2 transition-transform cursor-pointer group ml-8">
+            class="bg-white border-2 border-black p-4 transform skew-x-3 hover:translate-x-2 transition-transform cursor-pointer group sm:ml-8">
             <div class="flex justify-between items-center text-black">
               <span class="font-anton text-2xl tracking-wide group-hover:text-red-600">CERVEJA</span>
               <iconify-icon icon="solar:glass-linear" width="24"></iconify-icon>
             </div>
           </div>
           <div
-            class="bg-black border-2 border-gray-500 p-4 transform -skew-x-3 hover:translate-x-2 transition-transform cursor-pointer group ml-4">
+            class="bg-black border-2 border-gray-500 p-4 transform -skew-x-3 hover:translate-x-2 transition-transform cursor-pointer group sm:ml-4">
             <div class="flex justify-between items-center text-gray-300">
               <span class="font-anton text-2xl tracking-wide group-hover:text-white">RESENHA</span>
               <iconify-icon icon="solar:chat-square-like-linear" width="24"></iconify-icon>
@@ -998,6 +1005,10 @@
       loadComments();
     });
     loadComments();
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+      var nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('hidden');
+    });
   </script>
 </body>
 
