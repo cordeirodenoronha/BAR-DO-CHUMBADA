@@ -970,8 +970,12 @@
           <div id="comments-list" class="mt-2 space-y-1"></div>
         </div>
       </div>
-      <div class="mt-12 text-center md:text-left border-t border-gray-800 pt-8 font-mono text-xs text-gray-500">
+      <div class="mt-12 flex flex-col md:flex-row items-center justify-between border-t border-gray-800 pt-8 font-mono text-xs text-gray-500">
         <p>© 2026 BUTECO DO CHUMBADA. TODOS DIREITOS RESERVADOS - MAIS DE 30 ANOS DE TRADIÇÃO.</p>
+        <div class="mt-4 md:mt-0 flex items-center gap-2 bg-black border border-gray-700 px-3 py-1.5 transform -skew-x-3">
+          <iconify-icon icon="solar:eye-linear" width="14" class="text-red-500"></iconify-icon>
+          <span class="transform skew-x-3"><span id="visitor-count">0</span> VISITAS</span>
+        </div>
       </div>
     </div>
     <!-- Bottom Corner Decor -->
@@ -1045,6 +1049,18 @@
       });
     });
     loadComments();
+    (function () {
+      var counterUrl = 'https://jsonblob.com/api/jsonBlob/1337a7e7-5de1-72b8-8ca4-69f5bd923e67';
+      var countEl = document.getElementById('visitor-count');
+      fetch(counterUrl).then(function (r) {
+        if (r.status === 404) return 0;
+        return r.json();
+      }).then(function (data) {
+        var n = typeof data === 'number' ? data : 0;
+        countEl.textContent = n;
+        fetch(counterUrl, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(n + 1) });
+      }).catch(function () { countEl.textContent = '0' });
+    })();
     document.getElementById('mobile-menu-btn').addEventListener('click', function () {
       var nav = document.getElementById('mobile-nav');
       nav.classList.toggle('hidden');
