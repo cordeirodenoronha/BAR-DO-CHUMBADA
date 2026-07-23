@@ -1050,13 +1050,9 @@
     });
     loadComments();
     (function () {
-      var counterUrl = 'https://jsonblob.com/api/jsonBlob/1337a7e7-5de1-72b8-8ca4-69f5bd923e67';
+      var counterUrl = 'https://jsonblob.com/api/jsonBlob/019f902d-0182-7724-89f5-4380d4cdc7b2';
       var countEl = document.getElementById('visitor-count');
-      fetch(counterUrl).then(function (r) {
-        if (r.status === 404) return 0;
-        return r.json();
-      }).then(function (data) {
-        var n = typeof data === 'number' ? data : 0;
+      fetch(counterUrl).then(function (r) { return r.json() }).then(function (n) {
         countEl.textContent = n;
         fetch(counterUrl, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(n + 1) });
       }).catch(function () { countEl.textContent = '0' });
