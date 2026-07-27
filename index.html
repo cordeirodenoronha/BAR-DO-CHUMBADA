@@ -571,20 +571,32 @@
 
 <body class="antialiased text-white selection:bg-red-600 selection:text-white">
   <!-- Floating Image Modal -->
-  <div id="floating-modal" class="hidden fixed inset-0 z-[200] flex items-center justify-center bg-black/70 backdrop-blur-sm"
+  <div id="floating-modal"
+    class="hidden fixed inset-0 z-[200] flex items-center justify-center bg-black/70 backdrop-blur-sm"
     onclick="if(event.target===this)this.classList.add('hidden')">
     <div id="floating-img-container" class="relative animate-float-in md:max-w-[90vw] md:max-h-[90vh]">
-      <img src="assets/VEM LOGO.png" alt="VEM LOGO" class="w-screen h-screen md:max-w-full md:max-h-[85vh] object-contain" />
+      <img src="assets/VEM LOGO.png" alt="VEM LOGO"
+        class="w-screen h-screen md:max-w-full md:max-h-[85vh] object-contain" />
       <button onclick="document.getElementById('floating-modal').classList.add('hidden')"
         class="absolute top-4 right-4 md:-top-4 md:-right-4 bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center border-2 border-white font-anton text-xl hover:bg-white hover:text-red-600 transition-colors shadow-lg">X</button>
     </div>
   </div>
   <style>
     @keyframes floatIn {
-      0% { transform: scale(0.3) translateY(100px); opacity: 0; }
-      100% { transform: scale(1) translateY(0); opacity: 1; }
+      0% {
+        transform: scale(0.3) translateY(100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
     }
-    .animate-float-in { animation: floatIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    .animate-float-in {
+      animation: floatIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
   </style>
   <!-- Navbar -->
   <nav class="fixed top-0 w-full z-50 pointer-events-none">
@@ -601,19 +613,22 @@
       </div>
       <!-- Nav Links (Skewed) -->
       <div class="hidden md:flex space-x-6 pointer-events-auto absolute right-4 md:right-12">
-        <a class="relative group" href="#" onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden')">
+        <a class="relative group" href="#"
+          onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden')">
           <div
             class="bg-white text-black px-6 py-2 transform -skew-x-12 border-2 border-black transition-all duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:translate-y-1">
             <span class="font-bold tracking-tight text-lg transform skew-x-12 inline-block">CACHAÇA</span>
           </div>
         </a>
-        <a class="relative group" href="#" onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden')">
+        <a class="relative group" href="#"
+          onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden')">
           <div
             class="bg-black text-white px-6 py-2 transform -skew-x-12 border-2 border-white transition-all duration-300 group-hover:bg-red-600 group-hover:border-black group-hover:translate-y-1">
             <span class="font-bold tracking-tight text-lg transform skew-x-12 inline-block">CERVEJA</span>
           </div>
         </a>
-        <a class="relative group" href="#" onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden')">
+        <a class="relative group" href="#"
+          onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden')">
           <div
             class="bg-black text-white px-6 py-2 transform -skew-x-12 border-2 border-white transition-all duration-300 group-hover:bg-red-600 group-hover:border-black group-hover:translate-y-1">
             <span class="font-bold tracking-tight text-lg transform skew-x-12 inline-block">SAL</span>
@@ -636,9 +651,12 @@
     <!-- Mobile Nav Dropdown -->
     <div id="mobile-nav" class="hidden md:hidden pointer-events-auto bg-black border-b-2 border-red-600">
       <div class="flex flex-col items-center py-4 space-y-3">
-        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#" onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden'); document.getElementById('mobile-nav').classList.add('hidden');">CACHAÇA</a>
-        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#" onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden'); document.getElementById('mobile-nav').classList.add('hidden');">CERVEJA</a>
-        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#" onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden'); document.getElementById('mobile-nav').classList.add('hidden');">SAL</a>
+        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#"
+          onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden'); document.getElementById('mobile-nav').classList.add('hidden');">CACHAÇA</a>
+        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#"
+          onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden'); document.getElementById('mobile-nav').classList.add('hidden');">CERVEJA</a>
+        <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#"
+          onclick="event.preventDefault(); document.getElementById('floating-modal').classList.remove('hidden'); document.getElementById('mobile-nav').classList.add('hidden');">SAL</a>
         <a class="text-white font-anton text-xl tracking-wide hover:text-red-500" href="#"
           onclick="event.preventDefault(); document.getElementById('contato-modal').classList.remove('hidden'); document.getElementById('mobile-nav').classList.add('hidden');">CONTATO</a>
       </div>
@@ -760,7 +778,8 @@
           </div>
         </div>
         <!-- Feature 2 -->
-        <div class="flex-1 group md:mt-8" onclick="document.getElementById('floating-modal').classList.remove('hidden')">
+        <div class="flex-1 group md:mt-8"
+          onclick="document.getElementById('floating-modal').classList.remove('hidden')">
           <div
             class="h-full bg-red-600 p-1 transform transition-transform duration-300 group-hover:-translate-y-2 group-hover:rotate-1">
             <div class="h-full bg-black border-2 border-white p-6 relative overflow-hidden text-white">
@@ -779,7 +798,8 @@
           </div>
         </div>
         <!-- Feature 3 -->
-        <div class="flex-1 group md:mt-16" onclick="document.getElementById('floating-modal').classList.remove('hidden')">
+        <div class="flex-1 group md:mt-16"
+          onclick="document.getElementById('floating-modal').classList.remove('hidden')">
           <div
             class="h-full bg-black p-1 transform transition-transform duration-300 group-hover:-translate-y-2 group-hover:-rotate-1">
             <div class="h-full bg-white border-2 border-black p-6 relative overflow-hidden">
@@ -970,11 +990,13 @@
           <div id="comments-list" class="mt-2 space-y-1"></div>
         </div>
       </div>
-      <div class="mt-12 flex flex-col md:flex-row items-center justify-between border-t border-gray-800 pt-8 font-mono text-xs text-gray-500">
+      <div
+        class="mt-12 flex flex-col md:flex-row items-center justify-between border-t border-gray-800 pt-8 font-mono text-xs text-gray-500">
         <p>© 2026 BUTECO DO CHUMBADA. TODOS DIREITOS RESERVADOS - MAIS DE 30 ANOS DE TRADIÇÃO.</p>
-        <div class="mt-4 md:mt-0 flex items-center gap-2 bg-black border border-gray-700 px-3 py-1.5 transform -skew-x-3">
+        <div
+          class="mt-4 md:mt-0 flex items-center gap-2 bg-black border border-gray-700 px-3 py-1.5 transform -skew-x-3">
           <iconify-icon icon="solar:eye-linear" width="14" class="text-red-500"></iconify-icon>
-          <span class="transform skew-x-3"><span id="visitor-count">0</span> VISITAS</span>
+          <span class="transform skew-x-3"><span id="visitor-count">0</span> VISITAS:</span>
         </div>
       </div>
     </div>
